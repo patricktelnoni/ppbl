@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ppbl/sqlite/connection.dart';
 import 'package:ppbl/sqlite/mahasiswa.dart';
-import 'package:ppbl/sqlite/read_data.dart';das
+import 'package:ppbl/sqlite/read_data.dart';
 
 class FormEdit extends StatefulWidget{
   final Mahasiswa mahasiswa;
