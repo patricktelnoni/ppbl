@@ -5,6 +5,7 @@ import 'package:ppbl/sqlite/read_data.dart';
 class FormInput extends StatelessWidget{
   final String label;
   final TextEditingController controller;
+  DatabaseHandler databaseHandler = new DatabaseHandler();
 
   FormInput({required this.label, required this.controller});
 
@@ -30,14 +31,8 @@ class FormInput extends StatelessWidget{
             padding: const EdgeInsets.all(10.0),
             child: ElevatedButton(
               onPressed: () async {
-                final db = await openMyDatabase();
-                await db.insert(
-                  'mahasiswa',
-                  {
-                    'name': controller.text,
-                    'age': 25,
-                  },
-                ).then((message){
+                databaseHandler.insertMahasiswa(controller.text)
+                    .then((message){
                   final snackBar = SnackBar(content: Text('Data berhasil disimpan'));
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }).catchError((error){

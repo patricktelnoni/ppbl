@@ -3,22 +3,7 @@ import 'package:ppbl/sqlite/mahasiswa.dart';
 import 'package:ppbl/sqlite/form_edit.dart';
 import 'package:ppbl/sqlite/connection.dart';
 
-Future<List<Mahasiswa>> fetchMahasiswa() async{
-  List<Mahasiswa> daftarMahasiswa = [];
-  final db = await openMyDatabase();
 
-  daftarMahasiswa = await db.query('mahasiswa').then((maps) {
-    return List.generate(maps.length, (i) {
-      return Mahasiswa(
-        id: maps[i]['_id'] as int,
-        name: maps[i]['name'] as String,
-        age: maps[i]['age'] as int,
-      );
-    });
-  });
-
-  return daftarMahasiswa;
-}
 
 class ReadData extends StatefulWidget{
   const ReadData({super.key});
@@ -29,7 +14,7 @@ class ReadData extends StatefulWidget{
 
 class _ReadDataState extends State<ReadData>{
   List<Mahasiswa> futureMahasiswa = [];
-
+  DatabaseHandler databaseHandler = new DatabaseHandler();
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -38,7 +23,7 @@ class _ReadDataState extends State<ReadData>{
       ),
       body: Center(
         child: FutureBuilder(
-            future: fetchMahasiswa(),
+            future: databaseHandler.fetchMahasiswa(),
             builder: (context, snapshot){
               if(snapshot.hasData){
                 futureMahasiswa = snapshot.data!;
@@ -67,7 +52,7 @@ class _ReadDataState extends State<ReadData>{
                     },
                       onLongPress:  () async{
                         final db = await openMyDatabase();
-                        db.delete('mahasiswa', where: '_id = ?', whereArgs: [futureMahasiswa[index].id])
+                        databaseHandler.hapusMahasiswa(futureMahasiswa[index].id)
                             .then((message){
                           final snackBar = SnackBar(content: Text('Data berhasil dihapus'));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
