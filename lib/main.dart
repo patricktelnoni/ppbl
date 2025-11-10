@@ -8,6 +8,10 @@ import 'package:ppbl/chart/scatterchart_example.dart';
 import 'package:ppbl/chart/radarchart_example.dart';
 import 'package:ppbl/sharedpreference/shared_preference.dart';
 import 'package:ppbl/sqlite/form_input.dart';
+import 'package:ppbl/navigation/navigation.dart';
+import 'package:ppbl/navigation/sidebar_example.dart';
+import 'package:ppbl/navigation/goroute.dart';
+import 'package:go_router/go_router.dart';
 
 
 void main() {
@@ -23,11 +27,16 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: "Aplikasi Open StreetMap",
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: FormInput(label: "Nama", controller: new TextEditingController()),
+      home: const SideBarExample(),
+
+
+
+
     );
 
 
