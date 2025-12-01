@@ -40,7 +40,7 @@ class _SideBarExampleState extends State{
           ),
         ]
       ),
-      bottomNavigationBar: new BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
           type:BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),

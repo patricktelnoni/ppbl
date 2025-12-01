@@ -5,6 +5,7 @@ class BarChartExample extends StatelessWidget{
 
   const BarChartExample({super.key});
 
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(

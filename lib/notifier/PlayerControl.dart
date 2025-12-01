@@ -2,7 +2,7 @@ import '../models/preferensi.dart';
 import 'package:flutter/material.dart';
 
 class PlayerControl with ChangeNotifier{
-  late Preference _preferences;
+  late final Preference _preferences;
 
   bool? isRandom;
   bool? isShuffle;

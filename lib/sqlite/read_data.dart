@@ -14,7 +14,7 @@ class ReadData extends StatefulWidget{
 
 class _ReadDataState extends State<ReadData>{
   List<Mahasiswa> futureMahasiswa = [];
-  DatabaseHandler databaseHandler = new DatabaseHandler();
+  DatabaseHandler databaseHandler = DatabaseHandler();
   @override
   Widget build(BuildContext context){
     return Scaffold(

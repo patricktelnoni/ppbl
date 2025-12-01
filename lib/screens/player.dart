@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ppbl/models/playlist.dart';
-import 'package:ppbl/models/preferensi.dart';
 import 'package:provider/provider.dart';
 import 'package:ppbl/notifier/LaguSaatIni.dart';
 import 'package:ppbl/notifier/PlayerControl.dart';
@@ -26,7 +25,7 @@ class FitPlayer extends StatelessWidget {
         children: <Widget>[
           Consumer<LaguSaatIniModel>(
               builder: (context, lagu, child) => Image.asset(
-                '${lagu.saatIni.imagePath}',
+                lagu.saatIni.imagePath,
                 height: 400,
                 width: 400,
                 alignment: Alignment.center,
@@ -52,15 +51,16 @@ class FitPlayer extends StatelessWidget {
                 onPressed: () {
                   var repeatState = context.read<PlayerControl>();
                   bool? repeatValue = repeatState.isRandom;
-                  if(repeatValue == false)
+                  if(repeatValue == false) {
                     repeatState.setRandom(true);
-                  else
+                  } else {
                     repeatState.setRandom(false);
+                  }
 
                   final repeatSnack = SnackBar(
                     content: Consumer<PlayerControl>(
                       builder: (BuildContext context, PlayerControl value, Widget? child) {
-                        return Text('${value.isRandom == true ? "Playlist Berulang" : "Playlist tidak berulang"}');
+                        return Text(value.isRandom == true ? "Playlist Berulang" : "Playlist tidak berulang");
                       },),
                     action: SnackBarAction(
                       label: 'Undo',
@@ -78,15 +78,16 @@ class FitPlayer extends StatelessWidget {
                 onPressed: () {
                   var shuffleState = context.read<PlayerControl>();
                   bool? shuffleValue = shuffleState.isShuffle;
-                  if(shuffleValue == false)
+                  if(shuffleValue == false) {
                     shuffleState.setRandom(true);
-                  else
+                  } else {
                     shuffleState.setRandom(false);
+                  }
 
                   final shuffleSnack = SnackBar(
                     content: Consumer<PlayerControl>(
                       builder: (BuildContext context, PlayerControl value, Widget? child) {
-                        return Text('${value.isRandom == true ? "Main secara acak" : "Main secara berurutan"}');
+                        return Text(value.isRandom == true ? "Main secara acak" : "Main secara berurutan");
                       },),
                     action: SnackBarAction(
                       label: 'Undo',

@@ -4,8 +4,8 @@ import 'mahasiswa.dart';
 
 
 Future<Database> openMyDatabase() async {
-   final _databaseName = "myDatabase.db";
-   final _databaseVersion = 1;
+   final databaseName = "myDatabase.db";
+   final databaseVersion = 1;
 
    final table      = 'mahasiswa';
 
@@ -20,7 +20,7 @@ Future<Database> openMyDatabase() async {
    final dosenNim  = 'nim';
 
   final dbPath    = await getDatabasesPath();
-  final path      = join(dbPath, _databaseName);
+  final path      = join(dbPath, databaseName);
   final database  = await openDatabase(
     path,
     version: 2,

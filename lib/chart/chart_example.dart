@@ -4,6 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 class ChartExample extends StatelessWidget{
   const ChartExample({super.key});
 
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(

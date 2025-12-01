@@ -5,9 +5,9 @@ import 'package:ppbl/sqlite/read_data.dart';
 class FormInput extends StatelessWidget{
   final String label;
   final TextEditingController controller;
-  DatabaseHandler databaseHandler = new DatabaseHandler();
+  DatabaseHandler databaseHandler = DatabaseHandler();
 
-  FormInput({required this.label, required this.controller});
+  FormInput({super.key, required this.label, required this.controller});
 
   @override
   Widget build(BuildContext context) {

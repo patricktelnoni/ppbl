@@ -54,6 +54,7 @@ class SimpleMapState extends State<SimpleMapScreen> {
   final LatLng point2 = LatLng(-6.975901620078193, 107.63661619542846);
 
 
+  @override
   void initState() {
     super.initState();
     daftarKoorinat = const [

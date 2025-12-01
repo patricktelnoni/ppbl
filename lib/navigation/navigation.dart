@@ -23,7 +23,7 @@ class _NavigationPageState extends State<NavigationPage>{
     return Scaffold(
       appBar: AppBar(title:Text("Contoh navigasi")),
       body: Center(child: Text("Contoh navigasi", style: TextStyle(fontFamily: 'Oswald', fontSize:24, fontWeight: FontWeight.bold,),)),
-      bottomNavigationBar: new BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
           type:BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),

@@ -22,8 +22,8 @@ class _EditPageState extends State<EditPage> {
   void initState() {
     super.initState();
 
-    this.db = DatabaseHandler();
-    this.db.initializeDB().whenComplete(() async {
+    db = DatabaseHandler();
+    db.initializeDB().whenComplete(() async {
       setState(() {});
     });
   }
@@ -208,10 +208,10 @@ class _EditPageState extends State<EditPage> {
           network: _selectedSocial!,
           account: accountNameController.text,
           influencerId: widget.influencer.id ?? 0);
-      widget.influencer.socialMedia.add(social!);
+      widget.influencer.socialMedia.add(social);
     } else {
-      social!.network = _selectedSocial!;
-      social!.account = accountNameController.text;
+      social.network = _selectedSocial!;
+      social.account = accountNameController.text;
     }
 
 

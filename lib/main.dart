@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ppbl/chart/chart_example.dart';
-import 'package:ppbl/chart/barchart_example.dart';
-import 'package:ppbl/chart/areachart_example.dart';
-import 'package:ppbl/chart/candlestick_example.dart';
-import 'package:ppbl/chart/piechart_example.dart';
-import 'package:ppbl/chart/scatterchart_example.dart';
-import 'package:ppbl/chart/radarchart_example.dart';
-import 'package:ppbl/sharedpreference/shared_preference.dart';
-import 'package:ppbl/sqlite/form_input.dart';
-import 'package:ppbl/navigation/navigation.dart';
-import 'package:ppbl/navigation/sidebar_example.dart';
-import 'package:ppbl/navigation/goroute.dart';
-import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ppbl/customwidget/custom_wiget.dart';
 
 
 void main() {
@@ -29,14 +18,39 @@ class MyApp extends StatelessWidget {
       title: "Aplikasi Open StreetMap",
 
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        textTheme: TextTheme(
+          displayLarge: TextStyle(
+              fontSize: 120.0,
+              fontWeight: FontWeight.w400,
+
+          ),
+          displayMedium: TextStyle(
+              fontSize: 32.0,
+              fontWeight: FontWeight.w200
+          ),
+          headlineMedium: GoogleFonts.lato(
+            fontSize: 40,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.75
+          )
+        ),
+        buttonTheme: ButtonThemeData(
+          textTheme: ButtonTextTheme.primary,
+
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.purple,
+            backgroundColor: Colors.purpleAccent,
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          ),
+        ),
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
         useMaterial3: true,
       ),
-      home: const SideBarExample(),
-
-
-
-
+      home: CustomWidget(),
     );
 
 

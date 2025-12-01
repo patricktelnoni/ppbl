@@ -24,7 +24,7 @@ class Lagu {
   @override
   bool operator == (Object other) => other is Lagu && other.id == id;
 
-  String get imagePath => _imagePath == null ? 'assets/cover/music-placeholder.png' : _imagePath!;
+  String get imagePath => _imagePath ?? 'assets/cover/music-placeholder.png';
 }
 
 

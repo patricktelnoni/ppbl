@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppbl/sqlite/connection.dart';
 import 'package:ppbl/sqlite/mahasiswa.dart';
-import 'package:ppbl/sqlite/read_data.dart';
 
 class FormEdit extends StatefulWidget{
   final Mahasiswa mahasiswa;
@@ -9,7 +8,7 @@ class FormEdit extends StatefulWidget{
   const FormEdit({super.key, required this.mahasiswa});
 
   @override
-  State<FormEdit> createState() => _EditDataState(this.mahasiswa);
+  State<FormEdit> createState() => _EditDataState(mahasiswa);
 }
 
 class _EditDataState extends State<FormEdit>{
