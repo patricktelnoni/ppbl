@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ppbl/customwidget/custom_wiget.dart';
-
+import 'package:ppbl/gesture/gesture.dart';
+import 'package:ppbl/gesture/custom_gesture_button.dart';
+import 'package:ppbl/gesture/scale_example.dart';
+import 'package:ppbl/gesture/transform_scale.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
         useMaterial3: true,
       ),
-      home: CustomWidget(),
+      home: AnimatedScaleExample(),
     );
 
 
