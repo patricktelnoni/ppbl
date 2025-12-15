@@ -5,6 +5,7 @@ import 'package:ppbl/gesture/gesture.dart';
 import 'package:ppbl/gesture/custom_gesture_button.dart';
 import 'package:ppbl/gesture/scale_example.dart';
 import 'package:ppbl/gesture/transform_scale.dart';
+import 'package:ppbl/localauth/lockscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
         useMaterial3: true,
       ),
-      home: AnimatedScaleExample(),
+      home: AuthLocal(),
     );
 
 
